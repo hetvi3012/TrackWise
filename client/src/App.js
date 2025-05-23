@@ -1,27 +1,36 @@
-import {Routes, Route, Navigate} from 'react-router-dom'
-import HomePage from './pages/HomePage';
-import Register from './pages/Register';
-import Login from './pages/Login';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import HomePage  from './pages/HomePage';
+import Register  from './pages/Register';
+import Login     from './pages/Login';
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path='/' element={<ProtectedRoutes><HomePage /></ProtectedRoutes>} />
-        <Route path='/register' element={<Register />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </>
+    <Routes>
+      {/* Protected home route */}
+      <Route
+        path="/"
+        element={
+          <ProtectedRoutes>
+            <HomePage />
+          </ProtectedRoutes>
+        }
+      />
+
+      {/* Public routes */}
+      <Route path="/register" element={<Register />} />
+      <Route path="/login"    element={<Login />} />
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 }
 
-export function ProtectedRoutes(props){
-  if(localStorage.getItem('user')){
-    return props.children
-  }
-  else{
-    return <Navigate to="/login" />
-  }
+export function ProtectedRoutes({ children }) {
+  return localStorage.getItem('user')
+    ? children
+    : <Navigate to="/login" replace />;
 }
 
 export default App;

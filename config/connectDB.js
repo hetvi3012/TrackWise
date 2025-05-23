@@ -1,12 +1,26 @@
-const mongoose = require("mongoose")
-const colors=require("colors")
+// config/connectDB.js
+
+const mongoose = require('mongoose');
+const colors   = require('colors');
+
 const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO_URL);
-        console.log(`Server running on ${mongoose.connection.host}`.bgCyan.white);
-    } catch (error) {
-        console.log(`${error}`.bgRed)
-    }
+  // Ensure the MONGO_URI env var is set
+  const uri = process.env.MONGO_URI;
+  if (!uri) {
+    console.error(colors.bgRed.white('❌ MONGO_URI is not defined in your environment variables'));
+    process.exit(1);
+  }
+
+  try {
+    const conn = await mongoose.connect(uri, {
+      useNewUrlParser:    true,
+      useUnifiedTopology: true,
+    });
+    console.log(colors.bgCyan.white(`✔ MongoDB connected: ${conn.connection.host}`));
+  } catch (err) {
+    console.error(colors.bgRed.white(`❌ MongoDB connection error: ${err.stack || err.message}`));
+    process.exit(1);
+  }
 };
 
-module.exports = connectDB
+module.exports = connectDB;
