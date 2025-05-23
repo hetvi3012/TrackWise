@@ -107,3 +107,18 @@ JWT_SECRET="<your_jwt_secret_here>"
 PORT=5000
 ```
 
+### 4. Production Build
+
+Build the React app and serve it with Express:
+
+```bash
+npm start
+```
+This will:
+
+Run the build-client script to compile the React app into client/build.
+
+Start the Express server, which—when NODE_ENV=production—serves the static files from client/build.
+
+Browse to `http://localhost:5000` to see your production-build app.
+
