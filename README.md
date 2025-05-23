@@ -122,3 +122,17 @@ Start the Express server, which—when NODE_ENV=production—serves the static f
 
 Browse to `http://localhost:5000` to see your production-build app.
 
+
+### ⚙️ Available Scripts
+
+From the project root:
+
+| Command               | Description                                                   |
+| --------------------- | ------------------------------------------------------------- |
+| `npm run server`      | Start Express with nodemon (auto-reload on changes)          |
+| `npm run client`      | Start the React dev server (with CRACO theming)              |
+| `npm run dev`         | Run **server** and **client** in parallel                     |
+| `npm run build-client`| Install & build the React app into `client/build`             |
+| `npm start`           | Build client (if needed) and start Express for production     |
+
+
