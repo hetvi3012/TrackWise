@@ -37,6 +37,7 @@ A full-stack expense management application built with the MERN stack (MongoDB, 
 ---
 
 ## 📁 Project Structure
+```
 TrackWise/
 ├── client/ # React app (CRA + CRACO)
 │ ├── public/
@@ -61,7 +62,7 @@ TrackWise/
 ├── server.js # Express entrypoint
 ├── package.json # server scripts & dependencies
 └── .gitignore
-
+```
 
 
 
