@@ -137,3 +137,17 @@ From the project root:
 | `npm start`           | Build client (if needed) and start Express for production     |
 
 
+## 🤝 Contributing
+
+1. **Fork** the repo  
+2. **Create a branch**  
+   ```bash
+   git checkout -b feature/awesome
+   git commit -m "Add awesome feature"
+   git push origin feature/awesome
+   ```
+3. Open a pull request
+
+
+Happy Expense Tracking! 🚀
+
