@@ -20,20 +20,32 @@ A full-stack expense management application built with the MERN stack (MongoDB, 
 
 - **Persistent Sessions**  
   User data stored in `localStorage` and MongoDB—persists across browser and server restarts.
+  - **Receipt OCR Scanning**  
+  Upload receipt images to automatically extract amount, date, merchant, and description using Tesseract.js.
+
+- **NLP-Powered Description Parser**  
+  Type free-text transaction descriptions (e.g. “Paid 50 for coffee on June 5”) and have a custom NLP pipeline (Compromise + chrono-node) infer amount, date, merchant, category, and type.
+
+- **AI-Assisted Category Prediction**  
+  Optionally integrate with the OpenAI API to refine category suggestions based on transaction descriptions, improving accuracy over keyword-based rules.  
+
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer       | Technology                 |
-| ----------- | -------------------------- |
-| Backend     | Node.js, Express           |
-| Database    | MongoDB, Mongoose          |
-| Authentication | JSON Web Tokens (JWT)  |
-| Frontend    | React, Ant Design, CRACO   |
-| Charts      | Chart.js                   |
-| Dev Tools   | nodemon, concurrently      |
-
+| Layer                 | Technology                                    |
+| ----------------------| ----------------------------------------------|
+| **Backend**           | Node.js, Express                               |
+| **Database**          | MongoDB, Mongoose                              |
+| **Authentication**    | JSON Web Tokens (JWT), bcrypt                  |
+| **OCR**               | Tesseract.js                                   |
+| **NLP & Date Parsing**| Compromise, chrono-node                        |
+| **Frontend**          | React, Ant Design, CRACO                       |
+| **HTTP Client**       | Axios                                          |
+| **Charts**            | Chart.js                                       |
+| **Dev Tools**         | nodemon, concurrently                          |
+| **AI (optional)**     | OpenAI API (category prediction)               |
 ---
 
 ## 📁 Project Structure
