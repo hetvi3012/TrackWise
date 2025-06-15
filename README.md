@@ -89,8 +89,11 @@ TrackWise/
 
 ### Prerequisites
 
-- **Node.js** v16+ & **npm**  
-- **MongoDB** (local or Atlas)
+- **Node.js** (v16 or above)  
+- **npm** (comes with Node.js)  
+- **MongoDB** (local instance or MongoDB Atlas)  
+- **Tesseract.js compatible environment** (works out of the box in most Node setups)  
+- **Internet connection** (for optional OpenAI-based category predictions)
 
 ### 1. Clone & Install
 
