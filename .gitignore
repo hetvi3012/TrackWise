@@ -1,0 +1,17 @@
+# dependencies
+/client/node_modules/
+/node_modules
+# Ignore every node_modules folder
+node_modules/
+
+# If you have a client sub-folder
+client/node_modules/
+
+
+# local caches, build output, logs
+/client/.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
