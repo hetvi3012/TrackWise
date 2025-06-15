@@ -39,28 +39,32 @@ A full-stack expense management application built with the MERN stack (MongoDB, 
 ## 📁 Project Structure
 ```
 TrackWise/
-├── client/ # React app (CRA + CRACO)
-│ ├── public/
-│ ├── src/
-│ │ ├── pages/ # Login, Register, HomePage
-│ │ ├── components/ # Layout, Spinner, Analytics
-│ │ └── craco.config.js # AntD theme overrides
-│ ├── package.json
-│ └── .gitignore
+├── client/                         # React app (CRA + CRACO)
+│   ├── public/
+│   ├── src/
+│   │   ├── pages/                  # Login, Register, HomePage
+│   │   ├── components/             # Layout, Spinner, Analytics
+│   │   └── utils/                  # nlpLogic (NLP parser)
+│   ├── package.json
+│   └── .gitignore
 ├── config/
-│ └── connectDB.js # MongoDB connection
+│   └── connectDB.js                # MongoDB connection
 ├── controllers/
-│ ├── userController.js
-│ └── transactionController.js
+│   ├── userController.js
+│   ├── transactionController.js
+│   └── categoryController.js
+|   └── nlpController.js       # OpenAI-based category predictor
+├── utils/
+│   └── nlpLogic.js                 # Custom NLP logic (amount, date, merchant, category, type)
 ├── models/
-│ ├── userModel.js
-│ └── transactionModel.js
+│   ├── userModel.js
+│   └── transactionModel.js
 ├── routes/
-│ ├── userRoute.js
-│ └── transactionRoute.js
-├── .env # local environment variables
-├── server.js # Express entrypoint
-├── package.json # server scripts & dependencies
+│   ├── userRoute.js
+│   └── transactionRoute.js         # includes /parse-description and /predict-category
+├── .env                            # local environment variables (MONGO_URI, JWT_SECRET, optionally OPENAI_API_KEY)
+├── server.js                       # Express entrypoint
+├── package.json                    # server scripts & dependencies
 └── .gitignore
 ```
 
