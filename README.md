@@ -20,7 +20,7 @@ A full-stack expense management application built with the MERN stack (MongoDB, 
 
 - **Persistent Sessions**  
   User data stored in `localStorage` and MongoDB—persists across browser and server restarts.
-  - **Receipt OCR Scanning**  
+- **Receipt OCR Scanning**  
   Upload receipt images to automatically extract amount, date, merchant, and description using Tesseract.js.
 
 - **NLP-Powered Description Parser**  
