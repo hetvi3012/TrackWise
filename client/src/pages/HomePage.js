@@ -69,7 +69,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchTransactions();
-  }, [frequency, selectedDate, type]);
+  },  [frequency, selectedDate, type, fetchTransactions]);
 
   // Delete
   const handleDelete = async record => {
@@ -133,7 +133,7 @@ const HomePage = () => {
       form.setFieldsValue({ description: desc });
 
       // Date detection...
-      const dateTokenRe = /\b(\d{1,2}[\/-]\d{1,2}(?:[\/-]\d{2,4})?)\b/;
+      const dateTokenRe = /\b(\d{1,2}[/-]\d{1,2}(?:[/-]\d{2,4})?)\b/;
       let foundDate = null;
       const dateLine = lines.find(l => /date[:\s]/i.test(l));
       if (dateLine) {
