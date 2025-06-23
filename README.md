@@ -6,11 +6,12 @@ A full-stack expense management application built with the MERN stack (MongoDB, 
 
 ## 🚀 Features
 
-- **User Authentication**  
-  Secure signup/login with JWT and bcrypt password hashing.
+
 
 - **Expense Management**  
   Create, read, update, and delete transactions (amount, type, category, date, reference, description).
+- **User Authentication**  
+  Secure signup/login with JWT and bcrypt password hashing.
 
 - **Analytics Dashboard**  
   Filter by date range and type; view transactions in a table or as a chart breakdown by category.
